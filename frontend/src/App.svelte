@@ -9,7 +9,7 @@
   let loading = false;
   let timer;
 
-  $: isWriter = true; /* h02-trap-form */
+  $: isWriter = session?.role === "writer";
 
   function headers() {
     return session ? { Authorization: "Bearer " + session.token } : {};
